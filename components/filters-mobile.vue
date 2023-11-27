@@ -1,5 +1,5 @@
   <template>
-    <div class="bg-white w-full lg:flex">
+    <div class="bg-white w-full lg:flex sticky" style="z-index: 2;">
         <swiper :slidesPerView="1" :spaceBetween="50" :pagination="{ clickable: true }" :navigation="false" :loop="true">
         <swiper-slide>
             <lvl_slider />
@@ -45,9 +45,7 @@ export default {
     SwiperSlide,
   },
   setup() {
-    // W twoim przypadku prawdopodobnie nie potrzebujesz tych metod,
-    // chyba że chcesz coś zrobić w momencie inicjalizacji swiper
-    // lub przy zmianie slide'a.
+
     const modules = [Navigation, Pagination];
     
     return {

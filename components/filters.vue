@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black w-full lg:flex">
+  <div class="bg-black w-full lg:flex sticky" style="z-index: 2;">
     <lvl_slider />
 
     <code_tags />
@@ -9,20 +9,20 @@
 
     <btn_switch_pricepool />
 
+    
+
 </div>
+
 
 </template>
 
 <script setup>
-  import { ref } from 'vue';
   import btn_switch_remotejob from './btn_switch_remotejob.vue';
   import btn_switch_pricepool from './btn_switch_pricepool.vue';
   import lvl_slider from './lvl_slider.vue';
   import code_tags from './code_tags.vue';
 
-  const experienceLevel = ref(0); // 0 for Junior, 1 for Mid, 2 for Senior
-
-
+  
 
 </script>
 
@@ -44,3 +44,4 @@
 
 
 </style>
+
