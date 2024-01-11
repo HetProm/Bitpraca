@@ -18,8 +18,8 @@
 
         </div>
 
-        <div class="flex text-base mt-2 w-full">
-            <span class="text-gray-700 ml-[4.5rem]">All</span>
+        <div class="flex text-base mt-2 w-full justify-center">
+            <span class="text-gray-700 ml-[0.7rem]">All</span>
             <span class="text-gray-700 ml-6">Junior</span>
             <span class="text-gray-700 ml-[1.85rem]">Mid</span>
             <span class="text-gray-700 ml-6">Senior</span>

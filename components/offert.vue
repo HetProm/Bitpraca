@@ -3,7 +3,7 @@
   <div class="offert_list h-[85%]" v-bind="containerProps">
     <div v-bind="wrapperProps" >
       <div v-for="(offert, index) in list" :key="index" class="mx-auto max-w-7xl py-[24px] px-4 sm:px-8 lg:px-16 font-mono elementOffert h-[256px]">
-        <div class="bg-white rounded-lg lg:flex items-center border border-black h-full shadow-lg">
+        <div class="bg-white rounded-lg lg:flex items-center border border-black h-full ">
           <div class="rounded-l-lg border-r border-black p-4 h-full hidden justify-center   md:flex">
             <img :src="'images/logo/'+offert.data.logo" :alt="offert.data.logo" class=" max-h-full max-w-full">
           </div>
@@ -16,14 +16,14 @@
               
               <ul class="flex  md:mt-8 text-gray-700">
                 <li class=" mr-5 flex">
-                  <BriefcaseIcon class="h-6 w-6" />
-                  example</li>
+                  <BriefcaseIcon class="h-6 w-6 mr-1" />
+                  Example sp.z o.o.</li>
                 <li class=" mr-5 flex">
-                  <BriefcaseIcon class="h-6 w-6" />
+                  <BriefcaseIcon class="h-6 w-6 mr-1" />
                   {{ offert.data.expectedSchedules }}</li>
                 <li class="flex">
-                  <MapIcon class="h-6 w-6" />
-                  Aktualizuj</li>
+                  <MapIcon class="h-6 w-6 mr-1" />
+                  ul. Example</li>
               </ul>
             </div>
             <div class=" border-t border-black  h-1/3 flex items-center p-4">
@@ -69,11 +69,17 @@ const { list, containerProps, wrapperProps} = useVirtualList(offerts, {
 useInfiniteScroll(
   containerProps.ref,
   async () =>{
-    if (offerts.value.length < total ) {
-      const {data, error} = await useFetch(offertsReqAPI(currentPage,limit, typeRefresh));
-    
-      await offerts.value.push(...data.value.offerts);
-      currentPage.value++;
+    if (offerts.value.length < total && !isLoading.value ) {
+      try {
+        isLoading.value = true;
+        const {data, error} = await useFetch(offertsReqAPI(currentPage,limit, typeRefresh.value));
+
+        await offerts.value.push(...data.value.offerts);
+        currentPage.value++;
+      } finally {
+        isLoading.value = false;
+      }
+      
     }
 
 
