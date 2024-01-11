@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-7xl py-6 px-4 sm:px-8 lg:px-16 h-[15%] mt-[2em]">
+  <div class="mx-auto max-w-7xl py-6 px-4 sm:px-8 lg:px-16 h-[15%]">
       <div class="bg-white  rounded-lg flex border border-gray-700 flex-col relative z-[2]">
         <div class="flex ">
           <input v-model="searchTermFilter" type="text" @keyup="searchideaDelay()" @keyup.enter="handleEnter()" placeholder="Znajdź swoją wymarzoną prace." name="" id="" class="border-none focus:ring-0 focus:outline-none m-4 searchbar">

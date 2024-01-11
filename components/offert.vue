@@ -15,20 +15,20 @@
               </div>
               
               <ul class="flex  md:mt-8 text-gray-700">
-                <li class=" mr-5 flex">
-                  <BriefcaseIcon class="h-6 w-6 mr-1" />
+                <li class=" mr-5 flex max-sm:text-[0.85rem]">
+                  <BriefcaseIcon class="h-6 w-6 mr-1 " />
                   Example sp.z o.o.</li>
-                <li class=" mr-5 flex">
+                <li class=" mr-5 flex max-sm:text-[0.85rem]">
                   <BriefcaseIcon class="h-6 w-6 mr-1" />
                   {{ offert.data.expectedSchedules }}</li>
-                <li class="flex">
+                <li class="flex max-sm:text-[0.85rem]">
                   <MapIcon class="h-6 w-6 mr-1" />
                   ul. Example</li>
               </ul>
             </div>
             <div class=" border-t border-black  h-1/3 flex items-center p-4">
               <ul class="flex justify-evenly md:justify-between w-full flex-wrap ">
-                <li class="mr-5" v-for="(level, tag) in offert.data.expectedQualifications" :key="tag">
+                <li class="mr-5 max-sm:text-[0.85rem]" v-for="(level, tag) in offert.data.expectedQualifications" :key="tag">
                   {{ tag }}
                 </li>
               </ul>

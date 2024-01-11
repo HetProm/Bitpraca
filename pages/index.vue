@@ -1,18 +1,18 @@
 <template>
-  <div class="h-screen background-gradient">
+  <div class="h-screen background-gradient w-full overflow-hidden">
     <div class="h-full">
       <div class="h-[16%] lg:h-[20%]">
         <filters-mobile v-if="isMobile" />
         <filters v-else />
         <transition name="movein">
-          <div class=" bg-green-700 w-full text-center p-1 sticky" style="z-index: 1;" v-if="isAnyFilterChanged" > 
+          <div class=" bg-green-700 w-full text-center p-1 sticky z-[1]"  v-if="isAnyFilterChanged" > 
             <button style="color: white;" @click="refreshInitialState()">Zastosuj</button>
           </div>
         </transition>
       
       </div>
   
-      <main class="h-[86%] lg:h-[80%]">
+      <main class="h-[86%] lg:h-[80%] mt-[2em]">
         <searchbar />
         <offert />
       </main>
