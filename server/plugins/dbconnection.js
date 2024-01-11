@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { useRuntimeConfig } from '@nuxt/config/runtime';
+
 export default async () => {
     const config = useRuntimeConfig();
     try {
@@ -8,10 +10,9 @@ export default async () => {
             pass: config.pass,
             authSource: config.authSource
         };
-       // await mongoose.connect(config.dburl, DB_OPTIONS);
-        console.log("Connected Succesfully");
+        await mongoose.connect(config.dburl, DB_OPTIONS);
+        console.log("Connected Successfully");
     } catch (error) {
-        console.log(error);
-        
+        console.error("Error connecting to MongoDB:", error);
     }
 }
