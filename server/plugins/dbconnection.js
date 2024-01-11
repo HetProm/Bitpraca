@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { useRuntimeConfig } from '@nuxt/config/runtime';
 
 export default async () => {
     const config = useRuntimeConfig();
