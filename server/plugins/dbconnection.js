@@ -8,7 +8,7 @@ export default async () => {
             pass: config.pass,
             authSource: config.authSource
         };
-        await mongoose.connect(config.dburl, DB_OPTIONS);
+       // await mongoose.connect(config.dburl, DB_OPTIONS);
         console.log("Connected Succesfully");
     } catch (error) {
         console.log(error);
