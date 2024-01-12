@@ -12,6 +12,6 @@ export default async () => {
         await mongoose.connect(config.dburl, DB_OPTIONS);
         console.log("Connected Successfully");
     } catch (error) {
-        console.error("Error connecting to MongoDB:", error);
+        console.error(`Error connecting ${config.dbName} url: ${config.dburl}to MongoDB:`, error);
     }
 }
