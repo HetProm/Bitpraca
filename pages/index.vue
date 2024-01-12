@@ -13,7 +13,7 @@
       </div>
   
       <main class="h-[86%] lg:h-[80%] mt-[2em]">
-        <!-- <searchbar /> -->
+         <searchbar /> 
         <!-- <offert /> -->
         
         
