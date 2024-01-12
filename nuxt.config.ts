@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    preset: "static"
+  },
   app: {
     head: {
       charset: 'utf-8',
@@ -18,6 +21,7 @@ export default defineNuxtConfig({
     dbUsername: process.env.DBUSERNAME,
     dbPassword: process.env.DBPASSWORD,
     dbAuthSource: process.env.DBAUTHSOURCE,
+    dbAPI: process.env.APIKEY
   },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
