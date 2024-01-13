@@ -7,35 +7,32 @@
 </template>
 
 <script>
-import axios from 'axios';
 
-async function fetchData23() {
+import { MongoClient, ServerApiVersion } from 'mongodb';
+const uri = process.env.DATABASE_URL;
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
   try {
-    const response = await axios.post(
-      'https://eu-central-1.aws.data.mongodb-api.com/app/data-phkxf/endpoint/data/v1/action/findOne',
-      {
-        'collection': 'offerts',
-        'database': 'dbOfferts',
-        'dataSource': 'bitpraca',
-        'projection': {
-          '_id': 1,
-          'url': 1
-        }
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Request-Headers': '*',
-          'api-key': process.env.APIKEY
-        }
-      }
-    );
-    console.log(response.data.document);
-    } catch (error) {
-    console.error(error);
-    }
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
 }
+run().catch(console.dir);
 
-fetchData23();
 
 </script>
