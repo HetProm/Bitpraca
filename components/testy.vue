@@ -7,21 +7,35 @@
 </template>
 
 <script>
-import mongoose from 'mongoose';
- async function nuxtServerInit() {
-    try {
-      await mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
+import axios from 'axios';
 
-      console.log('Connected to MongoDB');
+async function fetchData23() {
+  try {
+    const response = await axios.post(
+      'https://eu-central-1.aws.data.mongodb-api.com/app/data-phkxf/endpoint/data/v1/action/findOne',
+      {
+        'collection': 'offerts',
+        'database': 'dbOfferts',
+        'dataSource': 'bitpraca',
+        'projection': {
+          '_id': 1,
+          'url': 1
+        }
+      },
+      {
+        headers: {
+          'Content-Type': 'application/ejson',
+          'Accept': "application/json",
+          'api-key': process.env.APIKEY
+        }
+      }
+    );
+    console.log(response.data.document);
     } catch (error) {
-      console.error('Connection error:', error);
+    console.error(error);
     }
-  }
+}
 
-
-  nuxtServerInit()
+fetchData23();
 
 </script>

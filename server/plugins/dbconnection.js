@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 
 export default async () => {
+    
     console.log('base')
+    
     // const config = useRuntimeConfig();
     // try {
     //     const DB_OPTIONS = {
