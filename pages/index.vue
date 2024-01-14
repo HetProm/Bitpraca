@@ -17,7 +17,7 @@
         <!-- <offert />  --> 
         
       </main>
-      <testy />
+
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
   import Searchbar from '~/components/searchbar.vue';
   import Filters from '~/components/filters.vue';
   import FiltersMobile from '~/components/filters-mobile.vue';
-  import testy from '~/components/testy.vue';
+
 
 
 

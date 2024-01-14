@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import axios from "axios";
+export default async ({}) => {
 
-export default async () => {
-    
     console.log('base')
+
     
     // const config = useRuntimeConfig();
     // try {
