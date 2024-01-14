@@ -101,6 +101,44 @@ delay = setTimeout(() => {
 }
 
 
+import axios from 'axios';
+
+
+
+try {
+        if (true) {
+            const apiUrl = 'https://eu-central-1.aws.data.mongodb-api.com/app/data-phkxf/endpoint/data/v1/action/find';
+            const response = await axios.post(apiUrl, {
+                collection: 'offerts',
+                database: 'dbOfferts',
+                dataSource: 'bitpraca',
+                projection: {
+                    '_id': 0,
+                    'expectedTitle': 1,
+                    // Dodaj inne pola, których potrzebujesz
+                },
+                filter: {
+                    expectedTitle: { $regex: "dev", $options: 'i' },
+                },
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'api-key': process.env.APIKEY,
+                },
+            });
+            const uniqueExpectedTitles = [...new Set(response.data.documents.map(item => item.expectedTitle))];
+            console.log(uniqueExpectedTitles)
+         
+        }
+    } catch (error) {
+        console.error(error);
+
+        
+    }
+
+
+
+
 
 </script>
 

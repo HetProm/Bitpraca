@@ -27,10 +27,14 @@ export default defineEventHandler(async (event) => {
             });
             const uniqueExpectedTitles = [...new Set(response.data.documents.map(item => item.expectedTitle))];
             console.log(uniqueExpectedTitles)
-            return uniqueExpectedTitles
+            return {uniqueExpectedTitles}
         }
     } catch (error) {
         console.error(error);
-        return 'Wystąpił błąd podczas przetwarzania zapytania.';
+        throw createError({
+            statusCode: 400,
+            statusMessage: 'Wystąpił błąd podczas przetwarzania zapytania.',
+        })
+        
     }
 });
