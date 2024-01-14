@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import axios from "axios";
-export default defineNitroPlugin((nitroApp) => {
+export default defineNitroPlugin( async (nitroApp) => {
 
     console.log('base')
 
@@ -13,7 +13,7 @@ export default defineNitroPlugin((nitroApp) => {
             pass: config.pass,
             authSource: config.authSource
         };
-        mongoose.connect(config.dburl, DB_OPTIONS);
+        await mongoose.connect(config.dbApiEntry, DB_OPTIONS);
         console.log("Connected Successfully");
     } catch (error) {
         console.error(`Error connecting ${config.dbName} url: ${config.dburl} to MongoDB:`, error);

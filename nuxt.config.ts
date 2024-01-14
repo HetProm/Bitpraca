@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     dbUsername: process.env.DBUSERNAME,
     dbPassword: process.env.DBPASSWORD,
     dbAuthSource: process.env.DBAUTHSOURCE,
-    dbAPI: process.env.APIKEY
+    dbAPI: process.env.APIKEY,
+    dbApiEntry: process.env.DATABASE_URL2
   },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
