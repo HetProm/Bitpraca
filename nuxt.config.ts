@@ -15,9 +15,6 @@ export default defineNuxtConfig({
       
     }
   },
-  serverHandlers: [
-    { route: '/api/search', handler: '~/server/api/search/index.get.js'}
-  ],
   runtimeConfig: {
     dburl: process.env.DATABASE_URL,
     dbName: process.env.DBNAME,
