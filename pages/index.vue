@@ -29,7 +29,7 @@
   import Filters from '~/components/filters.vue';
   import FiltersMobile from '~/components/filters-mobile.vue';
 
-
+  import mongoose from "mongoose";
 
   const config = useRuntimeConfig();
     try {
