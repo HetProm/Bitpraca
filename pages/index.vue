@@ -14,7 +14,7 @@
   
       <main class="h-[86%] lg:h-[80%] mt-[2em]">
          <searchbar /> 
-        <!-- <offert />  --> 
+         <offert />  
         
       </main>
 
