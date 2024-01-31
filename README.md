@@ -1,75 +1,44 @@
-# Nuxt 3 Minimal Starter
+# Bitpraca
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Bitpraca is a web application built with Nuxt.js (Vue.js) with a MongoDB database. It is a test project allowing users to search for job offers among thousands of listings from the internet. The project enables simple and fast filtering of job offers. Please note that due to its test and demonstration nature, the project does not contain real job offer data.
 
-## Setup
+## Installation
 
-Make sure to install the dependencies:
+To install the project locally, follow these steps:
 
-```bash
-# npm
-npm install
+1. Clone the repository:
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```
+git clone https://github.com/HetProm/Bitpraca.git
 ```
 
-## Development Server
+2. Navigate to the project directory:
 
-Start the development server on `http://localhost:3000`:
+```
+cd Bitpraca
+```
 
-```bash
-# npm
+3. Install dependencies using npm:
+
+```
+npm ci
+```
+
+4. Run the project locally:
+
+```
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Usage
 
-Build the application for production:
+You can test the project's functionalities by visiting the website [Bitpraca](https://bitpraca.hettman.pl/).
 
-```bash
-# npm
-npm run build
+## Author
 
-# pnpm
-pnpm run build
+**Krystian Hettman**  
+- Contact: KrystianHettman@gmail.com
 
-# yarn
-yarn build
+## License
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+The project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
